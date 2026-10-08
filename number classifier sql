@@ -1,0 +1,45 @@
+-- =====================================================================
+-- A1 - Number Classifier (uses GOTO)
+-- Classifies a number as positive / negative / zero, then even / odd.
+-- Change v_num to test other values (e.g. 7, -4, 0, 10).
+-- =====================================================================
+SET SERVEROUTPUT ON
+
+DECLARE
+    v_num NUMBER := 7;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Number tested: ' || v_num);
+
+    -- Step 1: decide the sign and jump to the matching label
+    IF v_num > 0 THEN
+        GOTO positive_label;
+    ELSIF v_num < 0 THEN
+        GOTO negative_label;
+    ELSE
+        GOTO zero_label;
+    END IF;
+
+    <<positive_label>>
+    DBMS_OUTPUT.PUT_LINE('Sign   : POSITIVE');
+    GOTO check_parity;
+
+    <<negative_label>>
+    DBMS_OUTPUT.PUT_LINE('Sign   : NEGATIVE');
+    GOTO check_parity;
+
+    <<zero_label>>
+    DBMS_OUTPUT.PUT_LINE('Sign   : ZERO');
+    -- falls through to check_parity (0 is even)
+
+    -- Step 2: even or odd
+    <<check_parity>>
+    IF MOD(v_num, 2) = 0 THEN
+        DBMS_OUTPUT.PUT_LINE('Parity : EVEN');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Parity : ODD');
+    END IF;
+
+    <<end_label>>
+    DBMS_OUTPUT.PUT_LINE('Classification finished.');
+END;
+/
