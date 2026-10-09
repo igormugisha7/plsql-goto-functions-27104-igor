@@ -17,13 +17,13 @@ This assignment explored control structures, procedural logic using GOTO stateme
 ## Execution Screenshots
 
 ### 1. Database Schema & Setup Script Execution
-![Script Execution](screenshots/02_script_execution.png)
+![Script Execution](02_script_execution.png)
 
 ### 2. Employees Table Structure
-![Employees Table Schema](screenshots/03_table_schema.png)
+![Employees Table Schema](03_table_schema.png)
 
 ### 3. Populated Employees Table Output
-![Employees Data](screenshots/04_employees_data.png)
+![Employees Data](04_employees_data.png)
 
 ### 4. Populated Departments Table Output
-![Departments Data](screenshots/05_departments_data.png)
+![Departments Data](05_departments_data.png)
